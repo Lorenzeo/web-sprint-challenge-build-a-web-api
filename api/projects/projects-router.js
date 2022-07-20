@@ -47,7 +47,7 @@ router.get('/', (req, res)=>{
           });
   });
   
-  router.put('/:id',(req, res) => {
+  router.put('/:id',validate,(req, res) => {
       Projects.update(req.params.id, req.body)
       .then(project => {
         if (!project) {

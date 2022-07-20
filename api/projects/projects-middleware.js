@@ -5,7 +5,7 @@ const Projects = require("./projects-model")
 
 function validate(req, res, next){
     const { name, description, completed}= req.body
-    if(!name || !description || !completed){
+    if(!name || !description || typeof completed != "boolean" ){ 
         res.status(400).json({
             message:"Please provide name and description and completed for the project"})
             return;
